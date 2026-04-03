@@ -20,6 +20,19 @@ export const metadata: Metadata = {
   title: "つくよみ | AIが静かに、日本の中小企業を支える",
   description:
     "業務自動化テンプレート、AI業務コンサル、補助金マッチング、競合調査レポート。つくよみは中小企業の経営インフラをAIで民主化します。Powered by ARMADA.",
+  metadataBase: new URL("https://tsukuyomi.team-armada.jp"),
+  openGraph: {
+    title: "つくよみ | AIが静かに、日本の中小企業を支える",
+    description: "業務自動化・補助金マッチング・競合調査・技術コンサル。AIが24時間、御社の経営を支えます。",
+    siteName: "つくよみ",
+    locale: "ja_JP",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "つくよみ | AIが静かに、日本の中小企業を支える",
+    description: "業務自動化・補助金マッチング・競合調査・技術コンサル。AIが24時間、御社の経営を支えます。",
+  },
 };
 
 export default function RootLayout({
