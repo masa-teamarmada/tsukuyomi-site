@@ -59,7 +59,6 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Text */}
             <div>
               <p className="text-accent-gold text-sm font-medium tracking-widest mb-4">
                 POWERED BY ARMADA
@@ -83,7 +82,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Character Image */}
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative w-72 h-72 sm:w-96 sm:h-96">
                 <div className="absolute inset-0 rounded-full bg-accent-blue/10 blur-3xl" />

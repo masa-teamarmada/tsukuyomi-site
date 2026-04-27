@@ -29,7 +29,7 @@ body {
   color: var(--foreground);
 }
 
-/* Star field background */
+/* Star field background (つくよみ全体用) */
 .starfield {
   position: fixed;
   inset: 0;
@@ -49,7 +49,7 @@ body {
   background-color: var(--background);
 }
 
-/* Hex card shape clip */
+/* Hex card */
 .hex-card {
   position: relative;
   background: var(--card-bg);
@@ -62,7 +62,6 @@ body {
   box-shadow: 0 0 20px rgba(42, 111, 255, 0.15);
 }
 
-/* Moon crescent accent */
 .moon-accent::after {
   content: "☽";
   position: absolute;
@@ -72,12 +71,10 @@ body {
   pointer-events: none;
 }
 
-/* Gold glow on hover */
 .glow-gold:hover {
   box-shadow: 0 0 24px rgba(212, 160, 23, 0.25);
 }
 
-/* Button styles */
 .btn-primary {
   background: var(--accent-blue);
   color: white;
@@ -104,7 +101,6 @@ body {
   box-shadow: 0 0 20px rgba(212, 160, 23, 0.2);
 }
 
-/* Section divider with crescent */
 .divider-moon {
   display: flex;
   align-items: center;
@@ -118,4 +114,180 @@ body {
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--card-border), transparent);
+}
+
+/* ============================================
+   ROAD MASTER LP — Dark / GIS theme
+   ============================================ */
+.rm-root {
+  --rm-bg: #0a0e1a;
+  --rm-surface: #131826;
+  --rm-surface-elevated: #1b2236;
+  --rm-border: #252c42;
+  --rm-text: #f5f7fa;
+  --rm-text-muted: #8892a6;
+  --rm-accent-primary: #ff6b35;
+  --rm-accent-secondary: #4db8ff;
+  --rm-success: #34d399;
+  --rm-warning: #fbbf24;
+  background: var(--rm-bg);
+  color: var(--rm-text);
+}
+
+.rm-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(77, 184, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(77, 184, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.rm-grid-bg-dense {
+  background-image:
+    linear-gradient(to right, rgba(77, 184, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(77, 184, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.rm-radial-glow {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 107, 53, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 30%, rgba(77, 184, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 20% 60%, rgba(77, 184, 255, 0.06) 0%, transparent 50%);
+}
+
+.rm-tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.rm-btn-primary {
+  background: linear-gradient(180deg, #ff7d4a 0%, #ff6b35 100%);
+  color: #0a0e1a;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0 1px rgba(255, 107, 53, 0.4), 0 0 24px rgba(255, 107, 53, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.rm-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(255, 107, 53, 0.6), 0 0 32px rgba(255, 107, 53, 0.45);
+}
+
+.rm-btn-secondary {
+  background: rgba(77, 184, 255, 0.08);
+  color: #4db8ff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(77, 184, 255, 0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.rm-btn-secondary:hover {
+  background: rgba(77, 184, 255, 0.14);
+  border-color: rgba(77, 184, 255, 0.6);
+  box-shadow: 0 0 24px rgba(77, 184, 255, 0.2);
+}
+
+.rm-card {
+  background: #131826;
+  border: 1px solid #252c42;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+.rm-card-elevated {
+  background: #1b2236;
+  border: 1px solid #252c42;
+  border-radius: 16px;
+}
+.rm-card-glow:hover {
+  border-color: rgba(255, 107, 53, 0.5);
+  box-shadow: 0 0 32px rgba(255, 107, 53, 0.15);
+}
+.rm-card-glow-blue:hover {
+  border-color: rgba(77, 184, 255, 0.5);
+  box-shadow: 0 0 32px rgba(77, 184, 255, 0.15);
+}
+
+.rm-eyebrow {
+  font-family: var(--font-mono), "Geist Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #4db8ff;
+  font-weight: 600;
+}
+
+@keyframes rm-draw {
+  to { stroke-dashoffset: 0; }
+}
+.rm-draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: rm-draw 4s ease-out forwards;
+}
+.rm-draw-line-2 {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: rm-draw 5s ease-out 0.4s forwards;
+}
+.rm-draw-line-3 {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: rm-draw 4.5s ease-out 0.8s forwards;
+}
+
+@keyframes rm-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+.rm-pulse-dot {
+  animation: rm-pulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.rm-sign-onigiri {
+  background: linear-gradient(180deg, #2a5fa3, #1d4480);
+  color: #fff;
+  font-weight: 800;
+  font-family: var(--font-mono), "Geist Mono", monospace;
+}
+.rm-sign-pref {
+  background: linear-gradient(180deg, #fbbf24, #d99413);
+  color: #1a1305;
+  font-weight: 800;
+  font-family: var(--font-mono), "Geist Mono", monospace;
+}
+.rm-sign-expressway {
+  background: linear-gradient(180deg, #34d399, #1f9e69);
+  color: #0a0e1a;
+  font-weight: 800;
+  font-family: var(--font-mono), "Geist Mono", monospace;
+}
+
+.rm-divider-h {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #252c42 20%, #252c42 80%, transparent);
+}
+
+@keyframes rm-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200vh); }
+}
+.rm-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(77, 184, 255, 0.4), transparent);
+  pointer-events: none;
+  animation: rm-scan 8s linear infinite;
 }

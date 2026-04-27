@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PricingCard } from "@/components/PricingCard";
 
 export const metadata: Metadata = {
   title: "業界ニュースレター | つくよみ",
@@ -72,23 +71,31 @@ export default function NewsletterPage() {
         </div>
       </section>
 
-      {/* Registration Form */}
+      {/* CTA to note */}
       <section className="py-16">
-        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-center mb-3">まずは無料で購読</h2>
-          <p className="text-muted text-center text-sm mb-8">
-            週1回のダイジェスト版を無料でお届けします。
+        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold mb-3">noteで無料購読</h2>
+          <p className="text-muted text-sm mb-8">
+            noteでつくよみをフォローすると、最新の業界ニュースレターが届きます。
           </p>
-          <div className="flex gap-3">
-            <input
-              type="email"
-              placeholder="メールアドレス"
-              className="flex-1 bg-card-bg border border-card-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none focus:border-accent-blue"
-            />
-            <button className="btn-primary shrink-0 !py-3">登録する</button>
-          </div>
-          <p className="text-xs text-muted mt-3 text-center">
-            いつでも解除可能です。スパムは送りません。
+          <Link
+            href="https://note.com/tsukuyomi_ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-block"
+          >
+            noteでフォローする
+          </Link>
+          <p className="text-xs text-muted mt-4">
+            Xでも最新情報を発信中 →{" "}
+            <Link
+              href="https://x.com/tsukuyomi_ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-blue hover:underline"
+            >
+              @tsukuyomi_ai
+            </Link>
           </p>
         </div>
       </section>
@@ -98,34 +105,44 @@ export default function NewsletterPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-center mb-10">料金プラン</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <PricingCard
-              name="無料プラン"
-              price="¥0"
-              description="週1回のダイジェスト配信"
-              features={[
-                "週1回のハイライト配信",
-                "1テーマ選択可能",
-                "過去1ヶ月分のアーカイブ",
-              ]}
-              cta="無料で始める"
-              href="#"
-            />
-            <PricingCard
-              name="プレミアム"
-              price="¥1,500"
-              period="/月"
-              description="毎日配信 + 全テーマ + 深掘り分析"
-              features={[
-                "毎日配信（平日）",
-                "全テーマ購読可能",
-                "深掘り分析レポート（月2回）",
-                "全アーカイブ閲覧",
-                "メール通知カスタマイズ",
-              ]}
-              cta="プレミアムに登録"
-              href="#"
-              highlight
-            />
+            <div className="hex-card p-6">
+              <h3 className="text-xl font-bold">無料</h3>
+              <p className="text-3xl font-bold mt-2">¥0</p>
+              <p className="text-sm text-muted mt-2">noteフォローで購読</p>
+              <ul className="mt-4 space-y-2 text-sm text-muted">
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>週1回のハイライト配信</li>
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>全テーマ閲覧可能</li>
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>過去記事すべて閲覧可能</li>
+              </ul>
+              <Link
+                href="https://note.com/tsukuyomi_ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline block text-center mt-6"
+              >
+                noteでフォロー
+              </Link>
+            </div>
+            <div className="hex-card p-6 border-accent-blue/50">
+              <p className="text-accent-blue text-xs font-bold tracking-widest mb-2">POPULAR</p>
+              <h3 className="text-xl font-bold">メンバーシップ</h3>
+              <p className="text-3xl font-bold mt-2">¥1,500<span className="text-base font-normal text-muted">/月</span></p>
+              <p className="text-sm text-muted mt-2">noteメンバーシップで購読</p>
+              <ul className="mt-4 space-y-2 text-sm text-muted">
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>毎日配信（平日）</li>
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>全テーマ購読可能</li>
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>深掘り分析レポート（月2回）</li>
+                <li className="flex gap-2"><span className="text-accent-gold">✓</span>メンバー限定記事</li>
+              </ul>
+              <Link
+                href="https://note.com/tsukuyomi_ai/membership"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary block text-center mt-6"
+              >
+                メンバーシップに参加
+              </Link>
+            </div>
           </div>
         </div>
       </section>
